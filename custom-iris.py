@@ -39,6 +39,7 @@ else:
     severity = 1
 
 # Generate request
+# Reference: https://docs.dfir-iris.org/_static/iris_api_reference_v2.0.1.html#tag/Alerts/operation/post-case-add-alert
 payload = json.dumps({
     "alert_title": "Wazuh Alert",
     "alert_description": alert_description,
