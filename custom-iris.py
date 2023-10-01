@@ -45,7 +45,7 @@ payload = json.dumps({
     "alert_description": alert_description,
     "alert_source": "Wazuh Server",
     "alert_source_ref": alert_id,
-    "alert_source_link": "**WAZUH_URL**,
+    "alert_source_link": "WAZUH_URL",
     "alert_severity_id": severity, 
     "alert_status_id": 2, # 'New' status
     "alert_source_event_time": alert_timestamp,
