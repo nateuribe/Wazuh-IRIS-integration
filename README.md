@@ -21,7 +21,7 @@ Add the following snippet into the `/var/ossec/etc/ossec.conf` config file:
 ... Rest of config
 -->
 
-<!-- DFIR-IRIS integration -->
+<!-- IRIS integration -->
 <integration>
     <name>custom-iris.py</name>
     <hook_url>http://IRIS-BASE-URL/alerts/add</hook_url>
