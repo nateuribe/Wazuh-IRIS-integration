@@ -37,7 +37,7 @@ Restart the `wazuh-manager` service after making the above settings.
 The IRIS API can be found in the Dashboard under **My Settings**.
 
 ## Configuration
-> **Note:** By default, the IRIS Docker container utilizes self-signed certificates ([https://docs.dfir-iris.org/operations/configuration/#certificates]).
+> **Note:** By default, the IRIS Docker container utilizes self-signed certificates (https://docs.dfir-iris.org/operations/configuration/#certificates).
 > If your setup is utilizing self-signed certificates, you will need to disable certificate verification with `verify=False`:
 > ```python
 > response = requests.post(hook_url, verify=False, data=payload, headers={"Authorization": "Bearer " + api_key, "content-type": "application/json"})
