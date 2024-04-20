@@ -8,6 +8,12 @@ Simple Wazuh integration to send alerts to IRIS, as described in [https://nateur
 - python-requests
 
 ## Installation
+> **IMPORTANT:** By default, the IRIS Docker container utilizes self-signed certificates (https://docs.dfir-iris.org/operations/configuration/#certificates).
+> If your setup is utilizing self-signed certificates, you will need to disable certificate verification with `verify=False`:
+> ```python
+> response = requests.post(hook_url, verify=False, data=payload, headers={"Authorization": "Bearer " + api_key, "content-type": "application/json"})
+> ```
+
 ```
 git clone https://github.com/nateuribe/Wazuh-IRIS-integration.git
 cd Wazuh-IRIS-integration/
@@ -37,14 +43,9 @@ Restart the `wazuh-manager` service after making the above settings.
 The IRIS API can be found in the Dashboard under **My Settings**.
 
 ## Configuration
-> **Note:** By default, the IRIS Docker container utilizes self-signed certificates (https://docs.dfir-iris.org/operations/configuration/#certificates).
-> If your setup is utilizing self-signed certificates, you will need to disable certificate verification with `verify=False`:
-> ```python
-> response = requests.post(hook_url, verify=False, data=payload, headers={"Authorization": "Bearer " + api_key, "content-type": "application/json"})
-> ```
 
 The script comes preconfigured with a basic payload to create new IRIS alerts.
-Use the Alerts API reference to modify this at will (https://docs.dfir-iris.org/_static/iris_api_reference_v2.0.1.html#tag/Alerts/operation/post-case-add-alert).
+Use the Alerts API reference to modify this at will (https://docs.dfir-iris.org/latest/_static/iris_api_reference_v2.0.4.html#tag/Alerts/operation/post-case-add-alert).
 
 Here are some notable values you may change:
 
