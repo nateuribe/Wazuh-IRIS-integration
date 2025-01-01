@@ -1,5 +1,9 @@
 # Wazuh-IRIS-integration
-Simple Wazuh integration to send alerts to IRIS, as described in [https://nateuribe.tech/blog/foss-soc/](https://nateuribe.tech/blog/foss-soc/).
+Simple (**Unofficial**) Wazuh integration to send alerts to IRIS, as described in [https://nateuribe.tech/blog/foss-soc/](https://nateuribe.tech/blog/foss-soc/).
+
+> [!NOTE]
+> As of 2024-07-03, there is now [official documentation](https://wazuh.com/blog/enhancing-incident-response-with-wazuh-and-dfir-iris-integration/) by Wazuh for integrating IRIS with Wazuh. I **highly recommend** that you follow that documentation instead.
+
 
 ## Requirements
 - [Wazuh](https://github.com/wazuh/wazuh) Server
@@ -8,7 +12,8 @@ Simple Wazuh integration to send alerts to IRIS, as described in [https://nateur
 - python-requests
 
 ## Installation
-> ⚠️ **IMPORTANT:** By default, the IRIS Docker container utilizes self-signed certificates (https://docs.dfir-iris.org/operations/configuration/#certificates).
+> [!IMPORTANT]
+> By default, the IRIS Docker container utilizes self-signed certificates (https://docs.dfir-iris.org/operations/configuration/#certificates).
 > If your setup is utilizing self-signed certificates, you will need to disable certificate verification with `verify=False`:
 > ```python
 > response = requests.post(hook_url, verify=False, data=payload, headers={"Authorization": "Bearer " + api_key, "content-type": "application/json"})
